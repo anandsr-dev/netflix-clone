@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { movieLists, imgBaseUrl } from '../apiLinks'
+import { imgBaseUrl } from '../apiLinks'
 import { getData } from '../helpers/getData'
 import './Banner.css'
-
 function Banner({ url }) {
 
     const [movie, setMovie] = useState({})
@@ -18,7 +17,7 @@ function Banner({ url }) {
     }
 
     const truncate = (str, n) => {
-        return str?.length > n ? str.substr(0, n-1) + "..." : str
+        return str?.length > n ? str.substr(0, n - 1) + "..." : str
     }
 
     useEffect(() => {
@@ -41,8 +40,6 @@ function Banner({ url }) {
                 </div>
 
                 <h1 className="banner__description">{truncate(movie?.overview, 150)}</h1>
-
-                
             </div>
             <div className="banner--fadeBottom"></div>
         </header>
