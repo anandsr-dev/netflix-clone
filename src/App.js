@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import Row from './components/Row'
+import { movieLists, logos } from './apiLinks';
+import Banner from './components/Banner';
+import Nav from './components/Nav';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Nav logos={logos}/>
+
+      <Banner url={movieLists.trending}/>
+
+      <Row title='NETFLIX ORIGINALS' url={movieLists.originals} isLarge />
+      <Row title='Trending' url={movieLists.trending} />
+      <Row title='Top Rated' url={movieLists.topRated} />
+      <Row title='Horror' url={movieLists.horror} />
+      <Row title='Thriller' url={movieLists.thriller} />
+      <Row title='Drama' url={movieLists.drama} />
+      <Row title='Romance' url={movieLists.romance} />
+      <Row title='Sci Fi' url={movieLists.scifi} />
     </div>
   );
 }
